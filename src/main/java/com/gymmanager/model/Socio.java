@@ -23,4 +23,15 @@ public class Socio {
     private String nombre;
     private Integer edad;
     private String email;
+
+    @ManyToMany
+    @JoinTable(
+        name = "socio_clase",
+        joinColumns = @JoinColumn(name = "socio_id"),
+        inverseJoinColumns = @JoinColumn(name = "clase_id")
+    )
+    @JsonIgnore
+    @ToString.Exclude
+    private List<Clase> clases;
+    
 }
