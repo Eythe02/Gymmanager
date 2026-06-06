@@ -18,4 +18,8 @@ public class SocioService {
     public List<Socio> findAll() {
         return repository.findAll();
     }
+
+    public Optional<Socio> findById(Long id) {
+        return repository.findById(id);
+    }
 }
