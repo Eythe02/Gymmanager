@@ -30,4 +30,8 @@ public class SocioService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    public Long contarClases(Long id) {
+        return repository.contarClases(id);
+    }
 }
