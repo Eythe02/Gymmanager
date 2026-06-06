@@ -22,4 +22,8 @@ public class SocioService {
     public Optional<Socio> findById(Long id) {
         return repository.findById(id);
     }
+
+    public Socio save(Socio socio) {
+        return repository.save(socio);
+    }
 }
