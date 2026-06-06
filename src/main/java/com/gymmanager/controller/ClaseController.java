@@ -53,7 +53,7 @@ public class ClaseController {
                     service.delete(id);
                     return ResponseEntity.<Void>noContent().build();
                 })
-                .orElse(ResponseEntity.<Void>notFound().build());
+                .orElse(ResponseEntity.<Void>notFound().build()); // <-- add <Void> here
     }
 
     @GetMapping("/buscar")

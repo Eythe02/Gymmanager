@@ -47,14 +47,14 @@ public class SocioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        return service.findById(id)
-                .map(s -> {
-                    service.delete(id);
-                    return ResponseEntity.<Void>noContent().build();
-                })
-                .orElse(ResponseEntity.<Void>notFound().build());
-    }
+public ResponseEntity<Void> delete(@PathVariable Long id) {
+    return service.findById(id)
+            .map(c -> {
+                service.delete(id);
+                return ResponseEntity.<Void>noContent().build();
+            })
+            .orElse(ResponseEntity.<Void>notFound().build()); // <-- add <Void> here
+}
 
     @GetMapping("/{id}/total-clases")
     public Long totalClases(@PathVariable Long id) {

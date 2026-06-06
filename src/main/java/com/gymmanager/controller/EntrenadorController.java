@@ -45,13 +45,13 @@ public class EntrenadorController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        return service.findById(id)
-                .map(e -> {
-                    service.delete(id);
-                    return ResponseEntity.<Void>noContent().build();
-                })
-                .orElse(ResponseEntity.<Void>notFound().build());
-    }
+  @DeleteMapping("/{id}")
+public ResponseEntity<Void> delete(@PathVariable Long id) {
+    return service.findById(id)
+            .map(c -> {
+                service.delete(id);
+                return ResponseEntity.<Void>noContent().build();
+            })
+            .orElse(ResponseEntity.<Void>notFound().build()); // <-- add <Void> here
+}
 }
