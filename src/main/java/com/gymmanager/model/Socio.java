@@ -19,4 +19,8 @@ public class Socio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String nombre;
+    private Integer edad;
+    private String email;
 }
