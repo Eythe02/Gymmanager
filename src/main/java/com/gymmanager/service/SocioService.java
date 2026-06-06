@@ -14,4 +14,8 @@ import java.util.Optional;
 public class SocioService {
 
     private final SocioRepository repository;
+
+    public List<Socio> findAll() {
+        return repository.findAll();
+    }
 }
