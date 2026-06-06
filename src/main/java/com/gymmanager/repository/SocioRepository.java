@@ -7,5 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface SocioRepository extends JpaRepository<Socio, Long> {
 
-    
+    @Query("SELECT COUNT(c) FROM Socio s JOIN s.clases c WHERE s.id = :id")
+    Long contarClases(@Param("id") Long id);    
 }
