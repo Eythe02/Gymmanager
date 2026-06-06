@@ -26,4 +26,8 @@ public class SocioService {
     public Socio save(Socio socio) {
         return repository.save(socio);
     }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }
